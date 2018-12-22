@@ -24,8 +24,6 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
-        Log.d(TAG, "onCreate: called");
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
         Intent intent = getIntent();
@@ -44,9 +42,7 @@ public class DetailActivity extends AppCompatActivity {
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
-        Log.d(TAG, "onCreate: Json: " + json);
         Sandwich sandwich = JsonUtils.parseSandwichJson(json);
-        Log.d(TAG, "onCreate: sandwich name: " + sandwich.getMainName());
 
         if (sandwich == null) {
             // Sandwich data unavailable
