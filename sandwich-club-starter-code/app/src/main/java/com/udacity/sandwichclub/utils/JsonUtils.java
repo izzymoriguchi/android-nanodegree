@@ -35,14 +35,14 @@ public class JsonUtils {
             }
             i++;
         }
-
+        i = 0; // reset i
         return sandwich;
     }
 
     public static ArrayList<String> getArrayFromString(char[] jsonCharArray) {
         ArrayList<String> arrayOfStrs = new ArrayList<>();
         skipLettersUntil(jsonCharArray, '[');
-        skipLettersUntil(jsonCharArray, '"');
+        i++; // i should be at '"' or ']'
 
         while (jsonCharArray[i] != ']') {
             String item = getValueFromString(jsonCharArray);
@@ -55,13 +55,15 @@ public class JsonUtils {
 
 
     public static String getValueFromString(char[] jsonCharArray) {
+        StringBuilder stringBuilder = new StringBuilder();
+
         skipLettersUntil(jsonCharArray, '"');
         i++; // now i is at beginning of string or ':'
         if (jsonCharArray[i] == ':') {
             skipLettersUntil(jsonCharArray, '"');
             i++; // i is at beginning of string
         }
-        StringBuilder stringBuilder = new StringBuilder();
+
         while (jsonCharArray[i] != '"') {
             stringBuilder.append(jsonCharArray[i]);
             i++;
