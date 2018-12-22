@@ -29,7 +29,7 @@
             android:id="@+id/also_known_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"/>
+            android:layout_marginLeft="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -46,7 +46,8 @@
         <TextView
             android:id="@+id/origin_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +64,8 @@
         <TextView
             android:id="@+id/ingredients_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,7 +81,8 @@
         <TextView
             android:id="@+id/description_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp" />
     </LinearLayout>
 
 </LinearLayout>
